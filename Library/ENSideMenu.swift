@@ -423,6 +423,10 @@ open class ENSideMenu : NSObject, UIGestureRecognizerDelegate {
 
     internal func handlePan(_ recognizer : UIPanGestureRecognizer){
 
+		if allowPanGesture == false {
+			return
+		}
+
         let leftToRight = recognizer.velocity(in: recognizer.view).x > 0
 
         switch recognizer.state {
